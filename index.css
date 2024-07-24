@@ -1,35 +1,45 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    line-height: 1.6;
 }
 
+/* Container */
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    padding: 20px;
 }
 
+/* Header */
 .header {
     background: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header h1 {
     margin: 0;
     font-size: 2.5em;
+    font-weight: 700;
 }
 
 .header p {
     margin: 10px 0 0;
     font-size: 1.2em;
+    font-weight: 300;
 }
 
-.about, .features, .testimonials, .faq, .contact {
+/* Section Styles */
+section {
     background: #fff;
     padding: 20px;
     margin: 20px 0;
@@ -37,17 +47,22 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.about h2, .features h2, .testimonials h2, .faq h2, .contact h2 {
+section h2 {
     color: #333;
     font-size: 2em;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.about p, .features ul, .testimonials .testimonial, .faq .faq-item, .contact p {
+section p,
+section ul,
+section .testimonial,
+section .faq-item {
     font-size: 1em;
     line-height: 1.6;
 }
 
+/* Features Section */
 .features ul {
     list-style: none;
     padding: 0;
@@ -60,13 +75,20 @@ body {
 .features h3 {
     color: #333;
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
+/* Testimonials Section */
 .testimonials .testimonial {
     margin: 20px 0;
     font-style: italic;
+    padding: 10px;
+    border-left: 4px solid #007BFF;
+    background: #f4f4f9;
+    border-radius: 8px;
 }
 
+/* FAQ Section */
 .faq .faq-item {
     margin: 20px 0;
 }
@@ -79,6 +101,11 @@ body {
     padding: 10px;
     background: #f4f4f9;
     border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.faq h3:hover {
+    background: #e2e2e7;
 }
 
 .faq p {
@@ -89,16 +116,49 @@ body {
     margin: 0;
 }
 
+/* Contact Section */
 .contact a {
     color: #007BFF;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .contact a:hover {
+    color: #0056b3;
     text-decoration: underline;
 }
 
+/* SVG Container */
 .svg-container {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .features h3,
+    .faq h3 {
+        font-size: 1.3em;
+    }
+
+    .testimonial {
+        font-size: 0.9em;
+    }
 }
