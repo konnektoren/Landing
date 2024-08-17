@@ -78,6 +78,19 @@ section .faq-item {
     margin-bottom: 10px;
 }
 
+.multi-platform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.multi-platform img {
+    max-width: 100%;
+    margin-right: 10px;
+}
+
 /* Testimonials Section */
 .testimonials .testimonial {
     margin: 20px 0;
