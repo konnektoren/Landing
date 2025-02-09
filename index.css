@@ -120,6 +120,48 @@ section .faq-item {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Language Platform Feature Styling */
+.feature-detail .language-platforms {
+    margin-top: 20px;
+}
+
+.language-platforms {
+    margin: 20px 0;
+}
+
+.language-platforms ul {
+    list-style: none;
+    padding: 0;
+}
+
+.language-platforms li {
+    margin: 15px 0;
+}
+
+.language-platforms a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.language-platforms a:hover {
+    transform: translateX(10px);
+    border-color: #007bff;
+    background: #f8f9fa;
+}
+
+.language-platforms .emoji {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
 /* Testimonials Section */
 .testimonials .testimonial {
     margin: 20px 0;
