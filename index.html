@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="orange-light">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,11 +10,35 @@
         <meta name="author" content="Konnektoren Team" />
         <title>Welcome to Konnektoren</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="index.css" />
+
+        <!-- Force theme initialization -->
+        <script>
+            // Set the initial theme immediately to prevent flash of unstyled content
+            const savedTheme =
+                localStorage.getItem("theme") ||
+                (window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "orange-dark"
+                    : "orange-light");
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        </script>
+
+        <!-- Custom Themes (must come before daisyUI) -->
+        <link rel="stylesheet" href="themes.css" />
+
+        <!-- Tailwind and daisyUI from CDN -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- Font Awesome for icons -->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         />
+
         <script type="importmap">
             {
                 "imports": {
@@ -24,501 +48,867 @@
             }
         </script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <style>
+            /* Add some specific custom styles */
+            .language-link:hover {
+                transform: translateX(10px);
+                transition: transform 0.3s ease;
+            }
+
+            .theme-toggle-btn {
+                background-color: var(--b2);
+                border: 1px solid var(--b3);
+                border-radius: 50%;
+                padding: 4px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        </style>
     </head>
-    <body>
-        <div class="container">
-            <header class="header">
-                <h1>Welcome to Konnektoren</h1>
-                <p>
-                    Our project is dedicated to making learning German grammar
-                    easy and fun.
-                </p>
-                <a href="https://konnektoren.help/info/" class="info-link">
-                    View All Grammar Challenges →
-                </a>
-            </header>
-
-            <section class="about">
-                <h2>About Us</h2>
-                <p>
-                    Konnektoren is a comprehensive platform designed to simplify
-                    the process of learning German grammar. Our mission is to
-                    provide high-quality, interactive educational resources that
-                    cater to the needs of learners at all levels.
-                </p>
-            </section>
-
-            <section class="features">
-                <h2>Features</h2>
-                <ul>
-                    <li>
-                        <h3>Multiple Language Platforms</h3>
-                        <p>Choose your preferred learning platform:</p>
-                        <ul class="language-options">
-                            <li>
-                                <a
-                                    href="https://konnektoren.help"
-                                    title="Learn German"
-                                >
-                                    🇩🇪 German (Deutsch)
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://en.konnektoren.help"
-                                    title="Learn English"
-                                >
-                                    🇬🇧 English
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://es.konnektoren.help"
-                                    title="Learn Spanish"
-                                >
-                                    🇪🇸 Spanish (Español)
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3>Interactive lessons</h3>
-                        <p>
-                            Engage with the language through interactive lessons
-                            that ensure better retention of grammatical rules.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Progress tracking</h3>
-                        <p>
-                            Keep track of your progress with our intuitive
-                            dashboard, helping you stay motivated and on track.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Personalized learning paths</h3>
-                        <p>
-                            Get a personalized learning path that adapts to your
-                            performance and learning speed.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Achievements</h3>
-                        <p>
-                            Unlock various achievements as you progress,
-                            providing extra motivation and recognition for your
-                            efforts in learning German.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Verifiable Credential Badges</h3>
-                        <p>
-                            Earn blockchain-backed SSI badges to showcase your
-                            German language achievements securely and
-                            verifiably.
-                        </p>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="multi-platform">
-                <h2>Multi Platform</h2>
-                <p>
-                    Access Konnektoren on all your devices, including desktops
-                    and web. Versions for tablets and smartphones are planned.
-                </p>
-                <img
-                    src="Konnektoren-Multi-Platform.png"
-                    alt="Konnektoren Multi-Platform"
-                />
-            </section>
-
-            <section class="stores">
-                <h2>Available in Stores</h2>
-                <p>
-                    <iframe
-                        src="https://snapcraft.io/konnektoren-app/embedded?button=black"
-                        frameborder="0"
-                        width="100%"
-                        height="380px"
-                        style="border: 1px solid #ccc; border-radius: 2px"
-                    ></iframe>
-                </p>
-                <p>
-                    Download from AppImageHub:
-                    <a href="https://www.appimagehub.com/p/2206403">
-                        konnektoren-app</a
-                    >
-                </p>
-            </section>
-
-            <section class="feature-details">
-                <h2>Feature Details</h2>
-
-                <div class="feature-detail">
-                    <h3>Language Platforms</h3>
-                    <p>
-                        Choose from our selection of language learning
-                        platforms, each tailored to help you master your target
-                        language:
-                    </p>
-                    <div class="language-platforms">
-                        <ul>
-                            <li>
-                                <a
-                                    href="https://konnektoren.help"
-                                    title="Learn German"
-                                >
-                                    <span class="emoji">🇩🇪</span>
-                                    German (Deutsch)
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://en.konnektoren.help"
-                                    title="Learn English"
-                                >
-                                    <span class="emoji">🇬🇧</span>
-                                    English
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://es.konnektoren.help"
-                                    title="Learn Spanish"
-                                >
-                                    <span class="emoji">🇪🇸</span>
-                                    Spanish (Español)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="feature-detail">
-                    <h3>Interactive Lessons</h3>
-                    <p>
-                        Our interactive lessons use a variety of engaging
-                        methods to help you learn and retain German grammar:
-                    </p>
-                    <ul>
-                        <li>Multimedia content including audio and video</li>
-                        <li>Real-time feedback on exercises</li>
-                        <li>Adaptive difficulty based on your performance</li>
-                    </ul>
-                </div>
-
-                <div class="feature-detail">
-                    <h3>Progress Tracking</h3>
-                    <p>
-                        Stay motivated with our comprehensive progress tracking
-                        system:
-                    </p>
-                    <ul>
-                        <li>Visual progress bars for each grammar topic</li>
-                        <li>
-                            Detailed analytics on your strengths and areas for
-                            improvement
-                        </li>
-                        <li>Weekly and monthly progress reports</li>
-                    </ul>
-                </div>
-
-                <div class="feature-detail">
-                    <h3>Personalized Learning Paths</h3>
-                    <p>
-                        Our AI-driven system creates a unique learning journey
-                        for each user:
-                    </p>
-                    <ul>
-                        <li>
-                            Initial assessment to determine your starting level
-                        </li>
-                        <li>
-                            Dynamic adjustment of lesson difficulty and topics
-                        </li>
-                        <li>
-                            Recommendations for additional practice in weak
-                            areas
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="feature-detail">
-                    <h3>Achievements</h3>
-                    <p>
-                        Our achievement system adds an extra layer of motivation
-                        and fun to your learning experience:
-                    </p>
-                    <ul>
-                        <li>
-                            Unlock achievements for reaching milestones and
-                            demonstrating proficiency
-                        </li>
-                        <li>
-                            Track your progress with a diverse set of
-                            achievements, from beginner to advanced levels
-                        </li>
-                        <li>
-                            Achievements cover various aspects of learning,
-                            including:
-                            <ul>
-                                <li>Completing challenges and exercises</li>
-                                <li>Maintaining streaks of perfect scores</li>
-                                <li>
-                                    Exploring different types of grammar
-                                    challenges
-                                </li>
-                                <li>Accumulating experience points (XP)</li>
-                                <li>Mastering multiple game paths</li>
-                            </ul>
-                        </li>
-                        <li>Visual badges to showcase your accomplishments</li>
-                        <li>
-                            Achievements provide concrete goals to strive for,
-                            enhancing your learning motivation
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="feature-detail">
-                    <h3>Verifiable Credential Badges (SSI)</h3>
-                    <p>
-                        Showcase your achievements with our cutting-edge SSI
-                        badge system:
-                    </p>
-                    <ul>
-                        <li>
-                            Earn badges for completing lessons, mastering
-                            topics, and reaching milestones
-                        </li>
-                        <li>
-                            Store your badges securely in your personal SSI
-                            wallet
-                        </li>
-                        <li>
-                            Share your achievements easily with schools,
-                            employers, or on social media
-                        </li>
-                        <li>
-                            Blockchain-backed verification ensures the
-                            authenticity of your credentials
-                        </li>
-                    </ul>
-                    <p>
-                        To get started with SSI badges, complete challenges on
-                        Konnektoren and claim your badge using an SSI-compatible
-                        digital wallet.
-                    </p>
-                </div>
-            </section>
-
-            <section class="levels">
-                <h2>Learning Levels</h2>
-                <p>
-                    Konnektoren's learning path follows the Common European
-                    Framework of Reference for Languages (CEFR), guiding you
-                    from beginner to advanced levels with progressively
-                    challenging exercises.
-                </p>
-
-                <div class="level">
-                    <h3>Level A1 - Beginner</h3>
-                    <p>
-                        Start your German journey with foundational grammar.
-                        You'll build a solid base in core concepts, focusing on
-                        everyday vocabulary and simple sentence structures.
-                    </p>
-                    <ul>
-                        <li>Articles (der, die, das)</li>
-                        <li>Pronouns (personal and reflexive)</li>
-                        <li>Basic sentence structure and word order</li>
-                        <li>Simple verb conjugations</li>
-                        <li>Basic connectors (Konnektoren)</li>
-                        <li>Essential vocabulary for everyday communication</li>
-                    </ul>
-                </div>
-
-                <div class="level">
-                    <h3>Level A2 - Elementary</h3>
-                    <p>
-                        Expand your grammatical knowledge and build confidence.
-                        You'll delve deeper into verb conjugations and sentence
-                        structures, expanding your vocabulary and ability to
-                        engage in basic conversations.
-                    </p>
-                    <ul>
-                        <li>Advanced article usage</li>
-                        <li>More complex verb conjugations and tenses</li>
-                        <li>Noun genders and plural formation</li>
-                        <li>Negation and question formation</li>
-                        <li>Introduction to subordinate clauses</li>
-                        <li>Expanding vocabulary for broader communication</li>
-                    </ul>
-                </div>
-
-                <div class="level">
-                    <h3>Level B1 - Intermediate</h3>
-                    <p>
-                        Refine your grammar skills and enhance fluency. You'll
-                        tackle more complex sentence structures, explore nuanced
-                        vocabulary, and improve your ability to express yourself
-                        in a variety of contexts.
-                    </p>
-                    <ul>
-                        <li>Past tenses (Perfekt and Präteritum)</li>
-                        <li>Modal verbs and their usage</li>
-                        <li>
-                            Advanced sentence structures, including relative
-                            clauses
-                        </li>
-                        <li>Passive voice</li>
-                        <li>Indirect speech</li>
-                        <li>
-                            More sophisticated vocabulary and idiomatic
-                            expressions
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="level">
-                    <h3>Level B2 - Upper-Intermediate</h3>
-                    <p>
-                        Master advanced grammar and achieve near-native fluency.
-                        You will refine your understanding of complex sentence
-                        structures and subtle grammatical nuances.
-                    </p>
-                    <ul>
-                        <li>Advanced verb conjugations and constructions</li>
-                        <li>
-                            Complex sentence structures and subordinate clauses
-                        </li>
-                        <li>
-                            Nominalization and advanced adjective declensions
-                        </li>
-                        <li>Subjunctive mood (Konjunktiv)</li>
-                        <li>
-                            Functional verb combinations (Funktionsverbgefüge)
-                        </li>
-                        <li>
-                            Precise and nuanced vocabulary for academic and
-                            professional communication
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="level">
-                    <h3>Level C1 - Advanced</h3>
-                    <p>
-                        Achieve mastery of German grammar and stylistic finesse.
-                        This level focuses on advanced usage, stylistic
-                        variation, and the fine points of German expression.
-                    </p>
-                    <ul>
-                        <li>Advanced connector usage (Konnektoren)</li>
-                        <li>
-                            Complex sentence structures and stylistic variations
-                        </li>
-                        <li>Academic writing style and terminology</li>
-                        <li>Nuances of grammar and idiomatic expressions</li>
-                        <li>Sophisticated vocabulary and rhetorical devices</li>
-                        <li>Precise expression and fluency in all contexts</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="faq">
-                <h2>FAQ</h2>
-                <div class="faq-item">
-                    <h3>How do I start using Konnektoren?</h3>
-                    <p>
-                        Simply visit
-                        <a href="https://konnektoren.help">konnektoren.help</a>
-                        and start exploring our interactive lessons and
-                        resources.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <h3>Is Konnektoren free to use?</h3>
-                    <p>
-                        We offer a variety of plans, including a free tier that
-                        gives you access to many of our features.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <h3>What is a verifiable credential badge?</h3>
-                    <p>
-                        A verifiable credential badge is a digital certificate
-                        of achievement that you can securely store and share.
-                        It's backed by web3 features, making it tamper-proof and
-                        easily verifiable by third parties.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <h3>How do I get started with SSI badges?</h3>
-                    <p>
-                        Once you complete certain challenges on Konnektoren,
-                        you'll be prompted to claim your badge. You'll need an
-                        SSI-compatible digital wallet to store your badges.
-                    </p>
-                    <div class="video-container">
-                        <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/QZg_dO161lg"
-                            title="How to get started with SSI badges"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        >
-                        </iframe>
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact">
-                <h2>Contact Us</h2>
-                <p>
-                    Interested in investing in our project? Reach out to us at
-                    <a href="mailto:info@konnektoren.help"
-                        >info@konnektoren.help</a
-                    >
-                </p>
-                <div class="social-links">
-                    <p>Follow us on social media:</p>
-                    <div class="social-icons">
-                        <a
-                            href="https://bsky.app/profile/konnektoren.help"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Follow us on Bluesky"
-                        >
-                            <i class="fa-brands fa-bluesky"></i>
-                        </a>
-                        <a
-                            href="https://twitter.com/konnektoren"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Follow us on Twitter"
-                        >
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a
-                            href="https://t.me/KonnektorenHelpBot"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Join us on Telegram"
-                        >
-                            <i class="fa-brands fa-telegram"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
+    <body class="bg-base-200 text-base-content">
+        <!-- Theme toggle button -->
+        <div class="fixed top-4 right-4 z-50 theme-toggle-btn">
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="dark" />
+                <!-- sun icon -->
+                <svg
+                    class="swap-on fill-current w-8 h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                    />
+                </svg>
+                <!-- moon icon -->
+                <svg
+                    class="swap-off fill-current w-8 h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+                    />
+                </svg>
+            </label>
         </div>
 
-        <div id="svg-container">
+        <div class="container mx-auto px-4 py-8 max-w-5xl">
+            <!-- Header using daisyUI hero component -->
+            <div
+                class="hero bg-primary text-primary-content rounded-lg shadow-lg mb-8"
+            >
+                <div class="hero-content text-center py-10">
+                    <div>
+                        <h1 class="text-4xl font-bold">
+                            Welcome to Konnektoren
+                        </h1>
+                        <p class="py-4 text-xl">
+                            Our project is dedicated to making learning German
+                            grammar easy and fun.
+                        </p>
+                        <a
+                            href="https://konnektoren.help/info/"
+                            class="btn btn-secondary"
+                        >
+                            View All Grammar Challenges →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body">
+                    <h2 class="card-title text-3xl">About Us</h2>
+                    <p>
+                        Konnektoren is a comprehensive platform designed to
+                        simplify the process of learning German grammar. Our
+                        mission is to provide high-quality, interactive
+                        educational resources that cater to the needs of
+                        learners at all levels.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body">
+                    <h2 class="card-title text-3xl">Features</h2>
+
+                    <!-- Grid for feature cards -->
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4"
+                    >
+                        <!-- Feature 1 -->
+                        <div class="card bg-base-200 shadow-md">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl text-primary">
+                                    Multiple Language Platforms
+                                </h3>
+                                <p>Choose your preferred learning platform:</p>
+                                <ul class="menu bg-base-200 rounded-box">
+                                    <li>
+                                        <a
+                                            href="https://konnektoren.help"
+                                            class="flex items-center language-link"
+                                        >
+                                            <span class="text-2xl mr-2"
+                                                >🇩🇪</span
+                                            >
+                                            German (Deutsch)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://en.konnektoren.help"
+                                            class="flex items-center language-link"
+                                        >
+                                            <span class="text-2xl mr-2"
+                                                >🇬🇧</span
+                                            >
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://es.konnektoren.help"
+                                            class="flex items-center language-link"
+                                        >
+                                            <span class="text-2xl mr-2"
+                                                >🇪🇸</span
+                                            >
+                                            Spanish (Español)
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="card bg-base-200 shadow-md">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl text-primary">
+                                    Interactive Lessons
+                                </h3>
+                                <p>
+                                    Engage with the language through interactive
+                                    lessons that ensure better retention of
+                                    grammatical rules.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="card bg-base-200 shadow-md">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl text-primary">
+                                    Progress Tracking
+                                </h3>
+                                <p>
+                                    Keep track of your progress with our
+                                    intuitive dashboard, helping you stay
+                                    motivated and on track.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="card bg-base-200 shadow-md">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl text-primary">
+                                    Personalized Learning Paths
+                                </h3>
+                                <p>
+                                    Get a personalized learning path that adapts
+                                    to your performance and learning speed.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 5 -->
+                        <div class="card bg-base-200 shadow-md">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl text-primary">
+                                    Achievements
+                                </h3>
+                                <p>
+                                    Unlock various achievements as you progress,
+                                    providing extra motivation and recognition
+                                    for your efforts in learning German.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 6 -->
+                        <div class="card bg-base-200 shadow-md">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl text-primary">
+                                    Verifiable Credential Badges
+                                </h3>
+                                <p>
+                                    Earn blockchain-backed SSI badges to
+                                    showcase your German language achievements
+                                    securely and verifiably.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multi Platform Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title text-3xl">Multi Platform</h2>
+                    <p>
+                        Access Konnektoren on all your devices, including
+                        desktops and web. Versions for tablets and smartphones
+                        are planned.
+                    </p>
+                    <div class="mt-4">
+                        <img
+                            src="Konnektoren-Multi-Platform.png"
+                            alt="Konnektoren Multi-Platform"
+                            class="rounded-lg max-w-full shadow-lg"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stores Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body">
+                    <h2 class="card-title text-3xl">Available in Stores</h2>
+                    <div class="mt-4">
+                        <iframe
+                            src="https://snapcraft.io/konnektoren-app/embedded?button=black"
+                            frameborder="0"
+                            width="100%"
+                            height="380px"
+                            style="border: 1px solid #ccc; border-radius: 8px"
+                        ></iframe>
+                    </div>
+                    <p class="mt-4">
+                        Download from AppImageHub:
+                        <a
+                            href="https://www.appimagehub.com/p/2206403"
+                            class="link link-primary"
+                        >
+                            konnektoren-app</a
+                        >
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature Details Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body">
+                    <h2 class="card-title text-3xl">Feature Details</h2>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
+                        <!-- Feature Detail 1 -->
+                        <div
+                            class="card bg-base-200 shadow-md hover:shadow-lg transition-shadow"
+                        >
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Language Platforms
+                                </h3>
+                                <p>
+                                    Choose from our selection of language
+                                    learning platforms, each tailored to help
+                                    you master your target language:
+                                </p>
+                                <ul class="menu bg-base-200 rounded-box mt-4">
+                                    <li>
+                                        <a
+                                            href="https://konnektoren.help"
+                                            class="flex items-center language-link hover:bg-base-300"
+                                        >
+                                            <span class="text-2xl mr-2"
+                                                >🇩🇪</span
+                                            >
+                                            German (Deutsch)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://en.konnektoren.help"
+                                            class="flex items-center language-link hover:bg-base-300"
+                                        >
+                                            <span class="text-2xl mr-2"
+                                                >🇬🇧</span
+                                            >
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://es.konnektoren.help"
+                                            class="flex items-center language-link hover:bg-base-300"
+                                        >
+                                            <span class="text-2xl mr-2"
+                                                >🇪🇸</span
+                                            >
+                                            Spanish (Español)
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Feature Detail 2 -->
+                        <div
+                            class="card bg-base-200 shadow-md hover:shadow-lg transition-shadow"
+                        >
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Interactive Lessons
+                                </h3>
+                                <p>
+                                    Our interactive lessons use a variety of
+                                    engaging methods to help you learn and
+                                    retain German grammar:
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Multimedia content including audio and
+                                        video
+                                    </li>
+                                    <li>Real-time feedback on exercises</li>
+                                    <li>
+                                        Adaptive difficulty based on your
+                                        performance
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Feature Detail 3 -->
+                        <div
+                            class="card bg-base-200 shadow-md hover:shadow-lg transition-shadow"
+                        >
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Progress Tracking
+                                </h3>
+                                <p>
+                                    Stay motivated with our comprehensive
+                                    progress tracking system:
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Visual progress bars for each grammar
+                                        topic
+                                    </li>
+                                    <li>
+                                        Detailed analytics on your strengths and
+                                        areas for improvement
+                                    </li>
+                                    <li>Weekly and monthly progress reports</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Feature Detail 4 -->
+                        <div
+                            class="card bg-base-200 shadow-md hover:shadow-lg transition-shadow"
+                        >
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Personalized Learning Paths
+                                </h3>
+                                <p>
+                                    Our AI-driven system creates a unique
+                                    learning journey for each user:
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Initial assessment to determine your
+                                        starting level
+                                    </li>
+                                    <li>
+                                        Dynamic adjustment of lesson difficulty
+                                        and topics
+                                    </li>
+                                    <li>
+                                        Recommendations for additional practice
+                                        in weak areas
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Feature Detail 5 -->
+                        <div
+                            class="card bg-base-200 shadow-md hover:shadow-lg transition-shadow"
+                        >
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Achievements
+                                </h3>
+                                <p>
+                                    Our achievement system adds an extra layer
+                                    of motivation and fun to your learning
+                                    experience:
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Unlock achievements for reaching
+                                        milestones and demonstrating proficiency
+                                    </li>
+                                    <li>
+                                        Track your progress with a diverse set
+                                        of achievements, from beginner to
+                                        advanced levels
+                                    </li>
+                                    <li>
+                                        Achievements cover various aspects of
+                                        learning, including:
+                                        <ul
+                                            class="list-disc list-inside ml-6 mt-1"
+                                        >
+                                            <li>
+                                                Completing challenges and
+                                                exercises
+                                            </li>
+                                            <li>
+                                                Maintaining streaks of perfect
+                                                scores
+                                            </li>
+                                            <li>
+                                                Exploring different types of
+                                                grammar challenges
+                                            </li>
+                                            <li>
+                                                Accumulating experience points
+                                                (XP)
+                                            </li>
+                                            <li>
+                                                Mastering multiple game paths
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Visual badges to showcase your
+                                        accomplishments
+                                    </li>
+                                    <li>
+                                        Achievements provide concrete goals to
+                                        strive for, enhancing your learning
+                                        motivation
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Feature Detail 6 -->
+                        <div
+                            class="card bg-base-200 shadow-md hover:shadow-lg transition-shadow"
+                        >
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Verifiable Credential Badges (SSI)
+                                </h3>
+                                <p>
+                                    Showcase your achievements with our
+                                    cutting-edge SSI badge system:
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Earn badges for completing lessons,
+                                        mastering topics, and reaching
+                                        milestones
+                                    </li>
+                                    <li>
+                                        Store your badges securely in your
+                                        personal SSI wallet
+                                    </li>
+                                    <li>
+                                        Share your achievements easily with
+                                        schools, employers, or on social media
+                                    </li>
+                                    <li>
+                                        Blockchain-backed verification ensures
+                                        the authenticity of your credentials
+                                    </li>
+                                </ul>
+                                <p class="mt-4">
+                                    To get started with SSI badges, complete
+                                    challenges on Konnektoren and claim your
+                                    badge using an SSI-compatible digital
+                                    wallet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Levels Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body">
+                    <h2 class="card-title text-3xl">Learning Levels</h2>
+                    <p>
+                        Konnektoren's learning path follows the Common European
+                        Framework of Reference for Languages (CEFR), guiding you
+                        from beginner to advanced levels with progressively
+                        challenging exercises.
+                    </p>
+
+                    <div class="mt-4 space-y-4">
+                        <!-- Level A1 -->
+                        <div class="card bg-base-200">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Level A1 - Beginner
+                                </h3>
+                                <p>
+                                    Start your German journey with foundational
+                                    grammar. You'll build a solid base in core
+                                    concepts, focusing on everyday vocabulary
+                                    and simple sentence structures.
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>Articles (der, die, das)</li>
+                                    <li>Pronouns (personal and reflexive)</li>
+                                    <li>
+                                        Basic sentence structure and word order
+                                    </li>
+                                    <li>Simple verb conjugations</li>
+                                    <li>Basic connectors (Konnektoren)</li>
+                                    <li>
+                                        Essential vocabulary for everyday
+                                        communication
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level A2 -->
+                        <div class="card bg-base-200">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Level A2 - Elementary
+                                </h3>
+                                <p>
+                                    Expand your grammatical knowledge and build
+                                    confidence. You'll delve deeper into verb
+                                    conjugations and sentence structures,
+                                    expanding your vocabulary and ability to
+                                    engage in basic conversations.
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>Advanced article usage</li>
+                                    <li>
+                                        More complex verb conjugations and
+                                        tenses
+                                    </li>
+                                    <li>Noun genders and plural formation</li>
+                                    <li>Negation and question formation</li>
+                                    <li>Introduction to subordinate clauses</li>
+                                    <li>
+                                        Expanding vocabulary for broader
+                                        communication
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level B1 -->
+                        <div class="card bg-base-200">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Level B1 - Intermediate
+                                </h3>
+                                <p>
+                                    Refine your grammar skills and enhance
+                                    fluency. You'll tackle more complex sentence
+                                    structures, explore nuanced vocabulary, and
+                                    improve your ability to express yourself in
+                                    a variety of contexts.
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Past tenses (Perfekt and Präteritum)
+                                    </li>
+                                    <li>Modal verbs and their usage</li>
+                                    <li>
+                                        Advanced sentence structures, including
+                                        relative clauses
+                                    </li>
+                                    <li>Passive voice</li>
+                                    <li>Indirect speech</li>
+                                    <li>
+                                        More sophisticated vocabulary and
+                                        idiomatic expressions
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level B2 -->
+                        <div class="card bg-base-200">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Level B2 - Upper-Intermediate
+                                </h3>
+                                <p>
+                                    Master advanced grammar and achieve
+                                    near-native fluency. You will refine your
+                                    understanding of complex sentence structures
+                                    and subtle grammatical nuances.
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Advanced verb conjugations and
+                                        constructions
+                                    </li>
+                                    <li>
+                                        Complex sentence structures and
+                                        subordinate clauses
+                                    </li>
+                                    <li>
+                                        Nominalization and advanced adjective
+                                        declensions
+                                    </li>
+                                    <li>Subjunctive mood (Konjunktiv)</li>
+                                    <li>
+                                        Functional verb combinations
+                                        (Funktionsverbgefüge)
+                                    </li>
+                                    <li>
+                                        Precise and nuanced vocabulary for
+                                        academic and professional communication
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Level C1 -->
+                        <div class="card bg-base-200">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Level C1 - Advanced
+                                </h3>
+                                <p>
+                                    Achieve mastery of German grammar and
+                                    stylistic finesse. This level focuses on
+                                    advanced usage, stylistic variation, and the
+                                    fine points of German expression.
+                                </p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>
+                                        Advanced connector usage (Konnektoren)
+                                    </li>
+                                    <li>
+                                        Complex sentence structures and
+                                        stylistic variations
+                                    </li>
+                                    <li>
+                                        Academic writing style and terminology
+                                    </li>
+                                    <li>
+                                        Nuances of grammar and idiomatic
+                                        expressions
+                                    </li>
+                                    <li>
+                                        Sophisticated vocabulary and rhetorical
+                                        devices
+                                    </li>
+                                    <li>
+                                        Precise expression and fluency in all
+                                        contexts
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body">
+                    <h2 class="card-title text-3xl">FAQ</h2>
+
+                    <div class="mt-4">
+                        <!-- Using daisyUI collapse component for FAQ items -->
+                        <div class="collapse collapse-arrow bg-base-200 mb-2">
+                            <input
+                                type="radio"
+                                name="faq-accordion"
+                                checked="checked"
+                            />
+                            <div class="collapse-title text-xl font-medium">
+                                How do I start using Konnektoren?
+                            </div>
+                            <div class="collapse-content">
+                                <p>
+                                    Simply visit
+                                    <a
+                                        href="https://konnektoren.help"
+                                        class="link link-primary"
+                                        >konnektoren.help</a
+                                    >
+                                    and start exploring our interactive lessons
+                                    and resources.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="collapse collapse-arrow bg-base-200 mb-2">
+                            <input type="radio" name="faq-accordion" />
+                            <div class="collapse-title text-xl font-medium">
+                                Is Konnektoren free to use?
+                            </div>
+                            <div class="collapse-content">
+                                <p>
+                                    We offer a variety of plans, including a
+                                    free tier that gives you access to many of
+                                    our features.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="collapse collapse-arrow bg-base-200 mb-2">
+                            <input type="radio" name="faq-accordion" />
+                            <div class="collapse-title text-xl font-medium">
+                                What is a verifiable credential badge?
+                            </div>
+                            <div class="collapse-content">
+                                <p>
+                                    A verifiable credential badge is a digital
+                                    certificate of achievement that you can
+                                    securely store and share. It's backed by
+                                    web3 features, making it tamper-proof and
+                                    easily verifiable by third parties.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="collapse collapse-arrow bg-base-200">
+                            <input type="radio" name="faq-accordion" />
+                            <div class="collapse-title text-xl font-medium">
+                                How do I get started with SSI badges?
+                            </div>
+                            <div class="collapse-content">
+                                <p>
+                                    Once you complete certain challenges on
+                                    Konnektoren, you'll be prompted to claim
+                                    your badge. You'll need an SSI-compatible
+                                    digital wallet to store your badges.
+                                </p>
+                                <div class="mt-4">
+                                    <iframe
+                                        class="w-full rounded-lg"
+                                        height="315"
+                                        src="https://www.youtube.com/embed/QZg_dO161lg"
+                                        title="How to get started with SSI badges"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="card bg-base-100 shadow-xl mb-8">
+                <div class="card-body">
+                    <h2 class="card-title text-3xl">Contact Us</h2>
+                    <p>
+                        Interested in investing in our project? Reach out to us
+                        at
+                        <a
+                            href="mailto:info@konnektoren.help"
+                            class="link link-primary"
+                        >
+                            info@konnektoren.help
+                        </a>
+                    </p>
+
+                    <div class="mt-6">
+                        <p>Follow us on social media:</p>
+                        <div class="flex gap-4 mt-2">
+                            <a
+                                href="https://bsky.app/profile/konnektoren.help"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Follow us on Bluesky"
+                                class="btn btn-circle btn-outline"
+                            >
+                                <i class="fa-brands fa-bluesky text-2xl"></i>
+                            </a>
+                            <a
+                                href="https://twitter.com/konnektoren"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Follow us on Twitter"
+                                class="btn btn-circle btn-outline"
+                            >
+                                <i class="fa-brands fa-twitter text-2xl"></i>
+                            </a>
+                            <a
+                                href="https://t.me/KonnektorenHelpBot"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Join us on Telegram"
+                                class="btn btn-circle btn-outline"
+                            >
+                                <i class="fa-brands fa-telegram text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="svg-container" class="container mx-auto mb-16">
             <!-- Your SVG will be appended here by D3 -->
         </div>
+
+        <!-- Footer -->
+        <footer
+            class="footer footer-center p-10 bg-primary text-primary-content"
+        >
+            <div>
+                <p class="font-bold">
+                    Konnektoren <br />Making learning German grammar easy and
+                    fun
+                </p>
+                <p>Copyright © 2024-2025 - All rights reserved</p>
+            </div>
+        </footer>
+
+        <!-- Theme toggle script -->
+        <script>
+            // Theme toggle functionality
+            const themeToggle = document.querySelector(".theme-controller");
+
+            // Check for saved theme preference or use preferred color scheme
+            const currentTheme =
+                localStorage.getItem("theme") ||
+                (window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "orange-dark"
+                    : "orange-light");
+
+            // Set initial theme
+            document.documentElement.setAttribute("data-theme", currentTheme);
+            themeToggle.checked = currentTheme === "orange-dark";
+
+            // Toggle theme when checkbox changes
+            themeToggle.addEventListener("change", function () {
+                const theme = this.checked ? "orange-dark" : "orange-light";
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+            });
+        </script>
+
         <script src="index.js"></script>
     </body>
 </html>

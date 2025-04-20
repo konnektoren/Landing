@@ -1,0 +1,167 @@
+/* Orange Light Theme */
+[data-theme="orange-light"] {
+    color-scheme: light;
+
+    /* Base colors - light mode */
+    --color-base-100: oklch(97% 0.01 0);
+    --color-base-200: oklch(94% 0.01 0);
+    --color-base-300: oklch(91% 0.01 0);
+    --color-base-content: oklch(16% 0.01 0);
+
+    /* Primary color - Orange FF8C00 */
+    --color-primary: oklch(76% 0.19 63.82);
+    --color-primary-content: oklch(100% 0 0);
+
+    /* Secondary color - Purple 8A2BE2 */
+    --color-secondary: oklch(51% 0.274 296.82);
+    --color-secondary-content: oklch(100% 0 0);
+
+    /* Accent/Tertiary - Gray 808080 */
+    --color-accent: oklch(54% 0.03 0);
+    --color-accent-content: oklch(100% 0 0);
+
+    /* Neutral - Gray 808080 */
+    --color-neutral: oklch(54% 0.03 0);
+    --color-neutral-content: oklch(100% 0 0);
+
+    /* Info - #17a2b8 */
+    --color-info: oklch(65% 0.18 206.7);
+    --color-info-content: oklch(100% 0 0);
+
+    /* Success - #28a745 */
+    --color-success: oklch(63% 0.21 142.5);
+    --color-success-content: oklch(100% 0 0);
+
+    /* Warning - #ffc107 */
+    --color-warning: oklch(85% 0.2 84.4);
+    --color-warning-content: oklch(16% 0.01 0);
+
+    /* Error - #dc3545 */
+    --color-error: oklch(60% 0.28 25.76);
+    --color-error-content: oklch(100% 0 0);
+
+    /* Styling options */
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+
+    /* DaisyUI compatibility variables */
+    --p: 63.82 0.19 76%;
+    --pc: 0 0 100%;
+    --s: 296.82 0.274 51%;
+    --sc: 0 0 100%;
+    --a: 0 0.03 54%;
+    --ac: 0 0 100%;
+    --n: 0 0.03 54%;
+    --nc: 0 0 100%;
+    --b1: 0 0.01 97%;
+    --b2: 0 0.01 94%;
+    --b3: 0 0.01 91%;
+    --bc: 0 0.01 16%;
+    --in: 206.7 0.18 65%;
+    --inc: 0 0 100%;
+    --su: 142.5 0.21 63%;
+    --suc: 0 0 100%;
+    --wa: 84.4 0.2 85%;
+    --wac: 0 0.01 16%;
+    --er: 25.76 0.28 60%;
+    --erc: 0 0 100%;
+    --rounded-box: 0.5rem;
+    --rounded-btn: 0.25rem;
+    --rounded-badge: 0.5rem;
+    --animation-btn: 0.25s;
+    --animation-input: 0.2s;
+    --btn-focus-scale: 0.95;
+    --border-btn: 1px;
+    --tab-border: 1px;
+    --tab-radius: 0.5rem;
+}
+
+/* Orange Dark Theme */
+[data-theme="orange-dark"] {
+    color-scheme: dark;
+
+    /* Base colors - dark mode */
+    --color-base-100: oklch(20% 0.02 240);
+    --color-base-200: oklch(25% 0.03 240);
+    --color-base-300: oklch(30% 0.04 240);
+    --color-base-content: oklch(92% 0.05 240);
+
+    /* Primary color - Orange (slightly brighter for dark mode) */
+    --color-primary: oklch(75% 0.22 60);
+    --color-primary-content: oklch(98% 0.01 60);
+
+    /* Secondary color - Purple */
+    --color-secondary: oklch(65% 0.27 300);
+    --color-secondary-content: oklch(98% 0.01 300);
+
+    /* Accent */
+    --color-accent: oklch(70% 0.27 160);
+    --color-accent-content: oklch(98% 0.01 160);
+
+    /* Neutral */
+    --color-neutral: oklch(70% 0.05 240);
+    --color-neutral-content: oklch(20% 0.01 240);
+
+    /* Info */
+    --color-info: oklch(75% 0.2 220);
+    --color-info-content: oklch(98% 0.01 220);
+
+    /* Success */
+    --color-success: oklch(70% 0.25 140);
+    --color-success-content: oklch(98% 0.01 140);
+
+    /* Warning */
+    --color-warning: oklch(85% 0.25 80);
+    --color-warning-content: oklch(20% 0.05 80);
+
+    /* Error */
+    --color-error: oklch(70% 0.3 30);
+    --color-error-content: oklch(98% 0.01 30);
+
+    /* Styling options */
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+
+    /* DaisyUI compatibility variables */
+    --p: 60 0.22 75%;
+    --pc: 60 0.01 98%;
+    --s: 300 0.27 65%;
+    --sc: 300 0.01 98%;
+    --a: 160 0.27 70%;
+    --ac: 160 0.01 98%;
+    --n: 240 0.05 70%;
+    --nc: 240 0.01 20%;
+    --b1: 240 0.02 20%;
+    --b2: 240 0.03 25%;
+    --b3: 240 0.04 30%;
+    --bc: 240 0.05 92%;
+    --in: 220 0.2 75%;
+    --inc: 220 0.01 98%;
+    --su: 140 0.25 70%;
+    --suc: 140 0.01 98%;
+    --wa: 80 0.25 85%;
+    --wac: 80 0.05 20%;
+    --er: 30 0.3 70%;
+    --erc: 30 0.01 98%;
+    --rounded-box: 0.5rem;
+    --rounded-btn: 0.25rem;
+    --rounded-badge: 0.5rem;
+    --animation-btn: 0.25s;
+    --animation-input: 0.2s;
+    --btn-focus-scale: 0.95;
+    --border-btn: 1px;
+    --tab-border: 1px;
+    --tab-radius: 0.5rem;
+}
