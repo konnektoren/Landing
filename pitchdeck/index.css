@@ -1,0 +1,501 @@
+/* Konnektoren Design System Colors */
+:root {
+    --konnektoren-primary: oklch(76% 0.19 63.82); /* Orange #FF8C00 */
+    --konnektoren-secondary: oklch(51% 0.274 296.82); /* Purple #8A2BE2 */
+    --konnektoren-accent: oklch(54% 0.03 0); /* Gray #808080 */
+    --konnektoren-base-100: oklch(97% 0.01 0);
+    --konnektoren-base-200: oklch(94% 0.01 0);
+    --konnektoren-base-300: oklch(91% 0.01 0);
+    --konnektoren-base-content: oklch(16% 0.01 0);
+    --konnektoren-success: oklch(63% 0.21 142.5);
+    --konnektoren-info: oklch(65% 0.18 206.7);
+    --konnektoren-warning: oklch(85% 0.2 84.4);
+    --konnektoren-error: oklch(60% 0.28 25.76);
+}
+
+.reveal {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reveal section {
+    background: linear-gradient(
+        135deg,
+        var(--konnektoren-base-100) 0%,
+        var(--konnektoren-base-200) 100%
+    );
+    color: var(--konnektoren-base-content);
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    color: var(--konnektoren-primary);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.reveal h1 {
+    background: linear-gradient(
+        90deg,
+        var(--konnektoren-primary),
+        var(--konnektoren-secondary)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+}
+
+/* Konnektoren Card Style */
+.konnektoren-card {
+    background: var(--konnektoren-base-100);
+    border-radius: 1rem;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--konnektoren-base-300);
+    margin: 0.8rem 0;
+}
+
+.konnektoren-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Konnektoren Button Style */
+.konnektoren-btn {
+    background: linear-gradient(
+        90deg,
+        var(--konnektoren-primary),
+        var(--konnektoren-secondary)
+    );
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.7rem 1.8rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 16px rgba(255, 140, 0, 0.3);
+    margin: 0.3rem;
+}
+
+.konnektoren-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 140, 0, 0.4);
+}
+
+.konnektoren-btn i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Metrics styling */
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.metric {
+    text-align: center;
+    padding: 1.2rem;
+    background: var(--konnektoren-base-100);
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--konnektoren-base-300);
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        var(--konnektoren-primary),
+        var(--konnektoren-secondary)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.4rem;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--konnektoren-base-content);
+    opacity: 0.8;
+    line-height: 1.3;
+}
+
+/* Logo styling */
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo-title img {
+    height: 75px;
+    width: 75px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(255, 140, 0, 0.3);
+}
+
+/* List styling */
+.reveal ul li {
+    color: var(--konnektoren-base-content);
+    margin: 0.4rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.reveal ul li::before {
+    content: "🔗";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Icon grid - LINEAR layout (vertical stack) */
+.icon-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.2rem 0;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* For slides with many items, make them more compact */
+.icon-grid.many-items {
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--konnektoren-base-100);
+    border-radius: 0.75rem;
+    border: 1px solid var(--konnektoren-base-300);
+    transition: all 0.3s ease;
+}
+
+.icon-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-item i {
+    font-size: 2rem;
+    color: var(--konnektoren-primary);
+    min-width: 3rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.icon-item div {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.icon-item strong {
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--konnektoren-primary);
+}
+
+/* Compact styles for slides with many items */
+.reveal section.compact .icon-grid.many-items .icon-item {
+    padding: 0.8rem;
+}
+
+.reveal section.compact .icon-grid.many-items .icon-item i {
+    font-size: 1.6rem;
+    min-width: 2.5rem;
+}
+
+.reveal section.compact .icon-grid.many-items .icon-item div {
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.reveal section.compact .icon-grid.many-items .icon-item strong {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.reveal section.compact h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.reveal section.compact .icon-grid.many-items {
+    gap: 0.6rem;
+    margin: 0.8rem 0;
+}
+
+/* Social links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--konnektoren-base-100);
+    border: 1px solid var(--konnektoren-base-300);
+    border-radius: 0.5rem;
+    color: var(--konnektoren-base-content);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background: var(--konnektoren-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Progress indicator */
+.progress-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--konnektoren-base-300);
+    z-index: 1000;
+}
+
+.progress-indicator::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--konnektoren-primary),
+        var(--konnektoren-secondary)
+    );
+    width: var(--progress, 0%);
+    transition: width 0.3s ease;
+}
+
+/* Team grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin: 1.2rem 0;
+}
+
+.team-member {
+    text-align: center;
+    padding: 1.2rem;
+    background: var(--konnektoren-base-100);
+    border-radius: 1rem;
+    border: 1px solid var(--konnektoren-base-300);
+}
+
+.team-member h4 {
+    color: var(--konnektoren-primary);
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+}
+
+.team-member p {
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.team-member i {
+    font-size: 3rem !important;
+    color: var(--konnektoren-primary);
+    margin-bottom: 1rem !important;
+}
+
+/* Roadmap timeline */
+.roadmap-timeline {
+    position: relative;
+    padding-left: 1.8rem;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.roadmap-timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--konnektoren-primary);
+}
+
+.roadmap-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--konnektoren-base-100);
+    border-radius: 0.75rem;
+    border: 1px solid var(--konnektoren-base-300);
+}
+
+.roadmap-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: var(--konnektoren-primary);
+}
+
+.roadmap-item p {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.roadmap-item::before {
+    content: "";
+    position: absolute;
+    left: -1.55rem;
+    top: 1rem;
+    width: 12px;
+    height: 12px;
+    background: var(--konnektoren-primary);
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reveal section {
+        margin: 0.3rem;
+        padding: 1rem;
+        height: 95vh;
+    }
+
+    .logo-title img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .reveal h1 {
+        font-size: 2.2rem;
+    }
+
+    .reveal h2 {
+        font-size: 1.8rem;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .metric-value {
+        font-size: 2rem;
+    }
+
+    .icon-grid,
+    .icon-grid.many-items {
+        gap: 0.6rem;
+        max-height: 70vh;
+    }
+
+    .icon-item {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .icon-item i {
+        font-size: 1.6rem;
+        min-width: 2.5rem;
+    }
+
+    .icon-item div {
+        font-size: 0.85rem;
+    }
+
+    .icon-item strong {
+        font-size: 0.9rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .team-member {
+        padding: 1rem;
+    }
+
+    .team-member i {
+        font-size: 2.5rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .roadmap-timeline {
+        padding-left: 1.2rem;
+    }
+
+    .roadmap-item {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .social-links {
+        gap: 0.6rem;
+    }
+
+    .social-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .konnektoren-btn {
+        padding: 0.6rem 1.4rem;
+        font-size: 1rem;
+    }
+}

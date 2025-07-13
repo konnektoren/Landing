@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Konnektoren - AI-Powered German Learning Platform</title>
         <link rel="icon" type="image/png" sizes="192x192" href="logo.png" />
+
         <!-- RevealJS CSS -->
         <link
             rel="stylesheet"
@@ -15,522 +16,542 @@
             href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css"
         />
 
-        <style>
-            .reveal section {
-                background-color: #f9f9f9;
-                color: #333;
-            }
-            .reveal h1,
-            .reveal h2,
-            .reveal h3 {
-                color: #0056b3;
-            }
-            .reveal ul li {
-                color: #444;
-            }
-            .metrics .metric-value {
-                font-size: 2em;
-                color: #007bff;
-            }
-            .social-links a {
-                color: #007bff;
-                text-decoration: none;
-            }
-        </style>
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+
+        <!-- Konnektoren Pitchdeck Styles -->
+        <link rel="stylesheet" href="index.css" />
     </head>
     <body>
+        <div class="progress-indicator"></div>
         <div class="reveal">
             <div class="slides">
                 <!-- Title Slide -->
-                <section>
-                    <div
-                        style="
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 1rem;
-                        "
-                    >
-                        <img
-                            src="logo.png"
-                            alt="Konnektoren Logo"
-                            style="
-                                height: 64px;
-                                width: 64px;
-                                border-radius: 12px;
-                            "
-                        />
-                        <h1 style="margin: 0">Konnektoren</h1>
+                <section data-transition="zoom">
+                    <div class="logo-title">
+                        <img src="logo.png" alt="Konnektoren Logo" />
+                        <h1>Konnektoren</h1>
                     </div>
                     <h3>AI-Powered German Learning Platform</h3>
                     <p>
                         Revolutionizing Language Education with Web3 Technology
                     </p>
-                    <small>2025</small>
+                    <div style="margin-top: 1.5rem">
+                        <a
+                            href="https://konnektoren.help"
+                            target="_blank"
+                            class="konnektoren-btn"
+                        >
+                            <i class="fas fa-rocket"></i>
+                            Try Live Demo
+                        </a>
+                    </div>
+                    <small style="margin-top: 1.5rem; opacity: 0.7"
+                        >Investor Presentation • 2025</small
+                    >
                 </section>
 
                 <!-- Problem Statement -->
-                <section>
-                    <h2>The Problem</h2>
-                    <div class="fragment">
-                        <p>
-                            🌍 Growing demand for German language skills for
-                            both business and cultural reasons.
-                        </p>
-                        <p>
-                            📚 Traditional learning methods are often
-                            inefficient and fail to engage learners.
-                        </p>
-                        <p>
-                            💰 High costs of quality language education limit
-                            access.
-                        </p>
-                        <p>
-                            📉 High dropout rates due to lack of personalization
-                            and engagement.
-                        </p>
+                <section data-transition="slide" class="compact">
+                    <h2>
+                        <i
+                            class="fas fa-exclamation-triangle"
+                            style="color: var(--konnektoren-warning)"
+                        ></i>
+                        The Problem
+                    </h2>
+                    <div class="icon-grid many-items">
+                        <div class="icon-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>Growing Demand</strong><br />
+                                German skills needed globally
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <strong>Inefficient Methods</strong><br />
+                                Traditional methods fail to engage
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div>
+                                <strong>High Costs</strong><br />
+                                Quality education is expensive
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-chart-line-down"></i>
+                            <div>
+                                <strong>High Dropout</strong><br />
+                                70% dropout rate lack of personalization
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Why Slide -->
-                <section>
-                    <h2>The 5 W's Analysis</h2>
-                    <div class="fragment">
-                        <h3>Why?</h3>
-                        <ul>
-                            <li>
-                                70% dropout rate in traditional language
-                                learning
-                            </li>
-                            <li>
-                                Growing demand for German language skills
-                                globally
-                            </li>
-                            <li>
-                                Need for personalized, engaging learning
-                                experiences
-                            </li>
-                            <li>
-                                Gap in effective German grammar learning tools
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- What Slide -->
-                <section>
-                    <h2>The 5 W's Analysis</h2>
-                    <div class="fragment">
-                        <h3>What?</h3>
-                        <ul>
-                            <li>AI-powered German grammar learning platform</li>
-                            <li>
-                                Web3-oriented architecture with client-side data
-                                storage
-                            </li>
-                            <li>
-                                Gamified learning experience with verifiable
-                                credentials
-                            </li>
-                            <li>
-                                Interactive challenges and real-time feedback
-                                system
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Who Slide -->
-                <section>
-                    <h2>The 5 W's Analysis</h2>
-                    <div class="fragment">
-                        <h3>Who?</h3>
-                        <ul>
-                            <li>Students preparing for German exams</li>
-                            <li>Professionals seeking career advancement</li>
-                            <li>
-                                Expats relocating to German-speaking countries
-                            </li>
-                            <li>
-                                Educational institutions and language schools
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Where Slide -->
-                <section>
-                    <h2>The 5 W's Analysis</h2>
-                    <div class="fragment">
-                        <h3>Where?</h3>
-                        <ul>
-                            <li>
-                                Primary focus: DACH region (Germany, Austria,
-                                Switzerland)
-                            </li>
-                            <li>Global reach through web platform</li>
-                            <li>Integration with educational institutions</li>
-                            <li>Corporate training programs</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- When Slide -->
-                <section>
-                    <h2>The 5 W's Analysis</h2>
-                    <div class="fragment">
-                        <h3>When?</h3>
-                        <ul>
-                            <li>
-                                One year of development and beta testing
-                                completed
-                            </li>
-                            <li>
-                                Current Phase: Market expansion and feature
-                                enhancement
-                            </li>
-                            <li>
-                                Next 5 Years: Scaling to become leading German
-                                grammar platform
-                            </li>
-                            <li>
-                                Timeline aligns with growing demand for digital
-                                language learning
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Vision & Goals -->
-                <section>
-                    <h2>Vision & Goals</h2>
-                    <div class="fragment">
-                        <h3>Short-term Goals (1 Year)</h3>
-                        <ul>
-                            <li>User Growth: Reach 50,000 active users</li>
-                            <li>
-                                AI Enhancement: Implement advanced NLP features
-                            </li>
-                            <li>
-                                Market Penetration: Establish partnerships with
-                                20+ educational institutions
-                            </li>
-                            <li>
-                                Feature Development: Launch mobile-responsive
-                                version
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="fragment">
-                        <h3>Long-term Goals (5 Years)</h3>
-                        <ul>
-                            <li>
-                                Market Leadership: Become #1 German grammar
-                                learning platform
-                            </li>
-                            <li>
-                                Technology Innovation: Pioneer in AI-driven
-                                language education
-                            </li>
-                        </ul>
+                <!-- Why Now? -->
+                <section data-transition="slide" class="compact">
+                    <h2>
+                        <i
+                            class="fas fa-clock"
+                            style="color: var(--konnektoren-info)"
+                        ></i>
+                        Why Now?
+                    </h2>
+                    <div class="icon-grid many-items">
+                        <div class="icon-item">
+                            <i class="fas fa-laptop-house"></i>
+                            <div>
+                                <strong>Remote Learning Boom</strong><br />
+                                Digital credentials post-pandemic
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-cubes"></i>
+                            <div>
+                                <strong>Web3 Adoption</strong><br />
+                                SSI accelerating in education
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <strong>German Demand Rising</strong><br />
+                                Globally for work and study
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-gamepad"></i>
+                            <div>
+                                <strong>AI Platforms Win</strong><br />
+                                Outperform traditional methods
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <!-- Market Opportunity -->
-                <section>
-                    <h2>Market Opportunity</h2>
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-chart-line"
+                            style="color: var(--konnektoren-success)"
+                        ></i>
+                        Market Opportunity
+                    </h2>
                     <div class="metrics">
-                        <div class="metric fragment">
+                        <div class="metric">
                             <div class="metric-value">€17.7B</div>
                             <div class="metric-label">
                                 Global Language Learning Market
                             </div>
                         </div>
-                        <div class="metric fragment">
+                        <div class="metric">
                             <div class="metric-value">20M+</div>
                             <div class="metric-label">
                                 German Learners Worldwide
                             </div>
                         </div>
-                        <div class="metric fragment">
+                        <div class="metric">
                             <div class="metric-value">15%</div>
                             <div class="metric-label">Annual Growth Rate</div>
                         </div>
                     </div>
-                    <div class="fragment">
+                    <div class="konnektoren-card">
                         <p>
-                            Targeting: Professionals, students, expats, and
-                            individuals seeking personal development.
+                            <strong>Target Audience:</strong> Professionals,
+                            students, expats, educational institutions
                         </p>
                     </div>
                 </section>
 
-                <!-- Our AI-Powered Solution -->
-                <section>
-                    <h2>Our AI-Powered Solution</h2>
-                    <div class="fragment">
-                        <h3>AI-Driven Personalized Learning</h3>
-                        <ul>
-                            <li>
-                                Adaptive learning paths: Tailored to individual
-                                skill levels and learning styles.
-                            </li>
-                            <li>
-                                Real-time feedback: Instant correction and
-                                personalized guidance using NLP.
-                            </li>
-                            <li>
-                                Interactive exercises: Gamified challenges and
-                                diverse content formats.
-                            </li>
-                            <li>
-                                AI-Generated Content: Dynamic lesson generation
-                                and personalized practice.
-                            </li>
-                            <li>
-                                Blockchain-verified credentials: Secure and
-                                verifiable achievements.
-                            </li>
-                        </ul>
+                <!-- Our Solution -->
+                <section data-transition="slide" class="compact">
+                    <h2>
+                        <i
+                            class="fas fa-lightbulb"
+                            style="color: var(--konnektoren-primary)"
+                        ></i>
+                        Our AI-Powered Solution
+                    </h2>
+                    <div class="icon-grid many-items">
+                        <div class="icon-item">
+                            <i class="fas fa-brain"></i>
+                            <div>
+                                <strong>AI-Driven Learning</strong><br />
+                                Adaptive paths for individual levels
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <strong>Real-time Feedback</strong><br />
+                                Instant correction using NLP
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Gamified Challenges</strong><br />
+                                Interactive diverse content
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <strong>Verifiable Credentials</strong><br />
+                                Blockchain-backed SSI badges
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Advanced AI Features -->
-                <section>
-                    <h2>Advanced AI Features</h2>
-                    <div class="fragment">
-                        <ul>
-                            <li>
-                                Natural Language Processing (NLP): For real-time
-                                grammar feedback, text generation and speech
-                                recognition.
-                            </li>
-                            <li>
-                                Machine Learning (ML): To predict learning
-                                performance and optimize content delivery.
-                            </li>
-                            <li>
-                                AI-Powered Chatbot: Provides immediate support
-                                and conversational practice.
-                            </li>
-                            <li>
-                                Automated Content Generation: Create custom
-                                exercises and lessons on demand.
-                            </li>
-                            <li>
-                                AI-Based assessment and recommendations: Assess
-                                your performance and identify areas for
-                                improvement.
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Technology Stack - The 5 W's -->
-                <section>
-                    <h2>Technology Stack - The 5 W's</h2>
-                    <div class="fragment">
-                        <ul>
-                            <li>
-                                Why: Performance, Security, Scalability, User
-                                Experience
-                            </li>
-                            <li>
-                                What: HTML5, CSS3, Markdown, Cloudflare Pages
-                            </li>
-                            <li>
-                                Where: Cloudflare, GitHub, Docker, Cloudflare
-                                Pages
-                            </li>
-                            <li>
-                                When: Real-time interaction, Continuous
-                                integration, deployment and scalability.
-                            </li>
-                            <li>
-                                Who: Rust, WebAssembly, Tokio, Yew Framework,
-                                Asciidoctor, Google Analytics, Telegram Bot API,
-                                Gmail
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Product Demo -->
-                <section>
-                    <h2>Product Demo</h2>
-                    <img
-                        src="product-screenshot.png"
-                        alt="Konnektoren Platform"
-                    />
-                    <p>
-                        <small>
-                            Interactive demo available at
-                            <a href="https://konnektoren.help"
-                                >konnektoren.help</a
+                <!-- Product Demo Info -->
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-desktop"
+                            style="color: var(--konnektoren-secondary)"
+                        ></i>
+                        Live Product Demo
+                    </h2>
+                    <div class="konnektoren-card" style="text-align: center">
+                        <p style="font-size: 1.2rem; margin-bottom: 2rem">
+                            Experience our AI-powered learning platform in
+                            action
+                        </p>
+                        <div class="icon-grid">
+                            <div class="icon-item">
+                                <i class="fas fa-gamepad"></i>
+                                <div>
+                                    <strong>Interactive Challenges</strong
+                                    ><br />
+                                    Grammar exercises with instant feedback
+                                </div>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Progress Tracking</strong><br />
+                                    Visual learning analytics and achievements
+                                </div>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-store"></i>
+                                <div>
+                                    <strong>Content Marketplace</strong><br />
+                                    Browse and purchase grammar packs
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 2rem">
+                            <a
+                                href="https://konnektoren.help"
+                                target="_blank"
+                                class="konnektoren-btn"
                             >
-                            <br />
-                            Purchase additional challenges at
-                            <a href="https://gumroad.konnektoren.help/"
-                                >gumroad.konnektoren.help</a
+                                <i class="fas fa-play"></i>
+                                Try Live Demo
+                            </a>
+                            <a
+                                href="https://gumroad.konnektoren.help/"
+                                target="_blank"
+                                class="konnektoren-btn"
                             >
-                        </small>
-                    </p>
+                                <i class="fas fa-shopping-cart"></i>
+                                Gumroad Store
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Product Screenshot -->
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-image"
+                            style="color: var(--konnektoren-secondary)"
+                        ></i>
+                        Platform Screenshot
+                    </h2>
+                    <div
+                        style="
+                            text-align: center;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                        "
+                    >
+                        <img
+                            src="product-screenshot.png"
+                            alt="Konnektoren Platform Screenshot"
+                            style="
+                                max-width: 90%;
+                                max-height: 70vh;
+                                margin: 0 auto;
+                                border-radius: 1rem;
+                                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+                                object-fit: contain;
+                            "
+                        />
+                        <p
+                            style="
+                                margin-top: 1rem;
+                                font-size: 0.9rem;
+                                opacity: 0.8;
+                            "
+                        >
+                            Interactive German grammar challenges with real-time
+                            feedback
+                        </p>
+                    </div>
                 </section>
 
                 <!-- Business Model -->
-                <section>
-                    <h2>Business Model</h2>
-                    <div class="fragment">
-                        <ul>
-                            <li>Freemium Model: Core features for free.</li>
-                            <li>
-                                Premium Subscriptions: Unlock advanced features,
-                                personalized learning, and content packs.
-                            </li>
-                            <li>
-                                Enterprise Solutions: Custom solutions for
-                                businesses and educational institutions.
-                            </li>
-                            <li>
-                                Content Marketplace: Opportunities for content
-                                creators and community engagement.
-                            </li>
-                            <li>
-                                <strong>Gumroad Integration:</strong> Sell
-                                grammar challenges, exercises, and content packs
-                                directly via
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-coins"
+                            style="color: var(--konnektoren-warning)"
+                        ></i>
+                        Business Model
+                    </h2>
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <strong>Freemium Model</strong><br />
+                                Core features available for free
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>Enterprise Solutions</strong><br />
+                                Custom solutions for institutions
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-store"></i>
+                            <div>
+                                <strong>Gumroad Integration</strong><br />
+                                Global distribution via
                                 <a
                                     href="https://gumroad.konnektoren.help/"
                                     target="_blank"
-                                    >Gumroad</a
+                                    >marketplace</a
                                 >
-                                for global reach and easy access.
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Traction & Client Stats -->
-                <section>
-                    <h2>Traction & Client Stats</h2>
-                    <div class="metrics">
-                        <div class="metric fragment">
-                            <div class="metric-value">15K+</div>
-                            <div class="metric-label">Registered Users</div>
-                        </div>
-                        <div class="metric fragment">
-                            <div class="metric-value">95%</div>
-                            <div class="metric-label">
-                                User Satisfaction (Net Promoter Score)
                             </div>
                         </div>
-                        <div class="metric fragment">
-                            <div class="metric-value">50%</div>
-                            <div class="metric-label">Monthly Active Users</div>
+                    </div>
+                </section>
+
+                <!-- Competitive Advantage - Split into 2 slides -->
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-shield-alt"
+                            style="color: var(--konnektoren-primary)"
+                        ></i>
+                        Competitive Advantage (1/2)
+                    </h2>
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <strong>AI-Powered Personalization</strong
+                                ><br />
+                                Highly adaptive learning paths
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-link"></i>
+                            <div>
+                                <strong>Web3 Integration</strong><br />
+                                Blockchain credentials & content ownership
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-language"></i>
+                            <div>
+                                <strong>Multi-Language Support</strong><br />
+                                Broad global appeal
+                            </div>
                         </div>
                     </div>
-                    <div class="fragment">
-                        <p>Client Statistics:</p>
-                        <ul>
-                            <li>Partnerships with 5 universities</li>
-                            <li>20+ corporate clients for employee training</li>
-                        </ul>
+                </section>
+
+                <!-- Competitive Advantage Part 2 -->
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-shield-alt"
+                            style="color: var(--konnektoren-primary)"
+                        ></i>
+                        Competitive Advantage (2/2)
+                    </h2>
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <i class="fas fa-store"></i>
+                            <div>
+                                <strong>Multi-Channel Distribution</strong
+                                ><br />
+                                Gumroad, marketplace, direct sales
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <div>
+                                <strong>German Konnektoren Focus</strong><br />
+                                Specialized niche expertise
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Community-Driven</strong><br />
+                                User-generated content ecosystem
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Competitive Advantage -->
-                <section>
-                    <h2>Competitive Advantage</h2>
-                    <div class="fragment">
-                        <ul>
-                            <li>
-                                AI-powered, personalized learning paths: Highly
-                                adaptive and engaging.
-                            </li>
-                            <li>
-                                Blockchain-verified credentials: Build trust.
-                            </li>
-                            <li>
-                                Web3 integration: Unique features like content
-                                ownership.
-                            </li>
-                            <li>Multi-language support: Broad appeal.</li>
-                            <li>
-                                Gamification and community features: Increase
-                                user engagement.
-                            </li>
-                            <li>
-                                <strong
-                                    >Gumroad Integration & Marketplace:</strong
-                                >
-                                Multi-channel distribution of challenges and
-                                exercises, increasing accessibility and revenue
-                                streams.
-                            </li>
-                            <li>
-                                Focus on German Konnektoren (connectors): This
-                                niche provides a competitive advantage.
-                            </li>
-                        </ul>
+                <!-- Roadmap -->
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-road"
+                            style="color: var(--konnektoren-info)"
+                        ></i>
+                        Roadmap
+                    </h2>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item">
+                            <h4>Q3 2025: Content Expansion</h4>
+                            <p>New content packs and additional languages</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <h4>Q4 2025: SSI Badges</h4>
+                            <p>Full SSI credential system for all challenges</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <h4>Q2 2026: Mobile App Launch</h4>
+                            <p>
+                                Native mobile applications for iOS and Android
+                            </p>
+                        </div>
+                        <div class="roadmap-item">
+                            <h4>2026: Community Marketplace</h4>
+                            <p>User-generated content and community features</p>
+                        </div>
                     </div>
-                </section>
-
-                <!-- Financial Projections -->
-                <section>
-                    <h2>Financial Projections</h2>
-                    <img src="financial-chart.png" alt="Growth Projections" />
-                    <p>
-                        <small
-                            >Projected revenue growth over next 3 years</small
-                        >
-                    </p>
                 </section>
 
                 <!-- Investment Opportunity -->
-                <section>
-                    <h2>Investment Opportunity</h2>
-                    <div class="fragment">
-                        <h3>Seeking €2M Seed Round</h3>
-                        <p>For:</p>
-                        <ul>
-                            <li>Advanced AI/ML Development</li>
-                            <li>Aggressive Market Expansion (DACH region)</li>
-                            <li>Team Growth (AI Engineers, Marketing)</li>
-                            <li>Product Enhancement & Content Creation</li>
-                        </ul>
+                <section data-transition="slide">
+                    <h2>
+                        <i
+                            class="fas fa-handshake"
+                            style="color: var(--konnektoren-success)"
+                        ></i>
+                        Investment Opportunity
+                    </h2>
+                    <div class="konnektoren-card" style="text-align: center">
+                        <div class="icon-grid many-items">
+                            <div class="icon-item">
+                                <i class="fas fa-brain"></i>
+                                <div>
+                                    <strong>AI/ML Development</strong><br />
+                                    Advanced features and capabilities
+                                </div>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <div>
+                                    <strong>Market Expansion</strong><br />
+                                    DACH region focus
+                                </div>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-user-plus"></i>
+                                <div>
+                                    <strong>Team Growth</strong><br />
+                                    Engineers and Marketing
+                                </div>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-cogs"></i>
+                                <div>
+                                    <strong>Product Enhancement</strong><br />
+                                    Features and content creation
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Social Links & Contact -->
-                <section>
-                    <h2>Get in Touch</h2>
-                    <p>
-                        🌐
-                        <a href="https://konnektoren.help">konnektoren.help</a>
-                    </p>
-                    <p>
-                        📧
-                        <a href="mailto:info@konnektoren.help"
-                            >info@konnektoren.help</a
-                        >
-                    </p>
-                    <div class="social-links">
-                        <a
-                            href="https://bsky.app/konnektoren.help"
-                            target="_blank"
-                            ><i class="fa-brands fa-bluesky"></i> Bluesky</a
-                        >
-                        <a
-                            href="https://t.me/KonnektorenHelpBot"
-                            target="_blank"
-                            ><i class="fab fa-telegram"></i> Telegram</a
-                        >
-                        <a
-                            href="https://www.linkedin.com/company/konnektoren/"
-                            target="_blank"
-                        >
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
+                <!-- Contact & Next Steps -->
+                <section data-transition="zoom">
+                    <h2>
+                        <i
+                            class="fas fa-envelope"
+                            style="color: var(--konnektoren-primary)"
+                        ></i>
+                        Let's Connect
+                    </h2>
+                    <div class="konnektoren-card" style="text-align: center">
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem">
+                            Ready to revolutionize language learning together?
+                        </p>
+                        <div style="margin-bottom: 1.5rem">
+                            <p>
+                                <i class="fas fa-globe"></i>
+                                <a
+                                    href="https://konnektoren.help"
+                                    target="_blank"
+                                    >konnektoren.help</a
+                                >
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@konnektoren.help"
+                                    >info@konnektoren.help</a
+                                >
+                            </p>
+                        </div>
+                        <div class="social-links">
+                            <a
+                                href="https://bsky.app/profile/konnektoren.help"
+                                target="_blank"
+                            >
+                                <i class="fab fa-bluesky"></i> Bluesky
+                            </a>
+                            <a
+                                href="https://t.me/KonnektorenHelpBot"
+                                target="_blank"
+                            >
+                                <i class="fab fa-telegram"></i> Telegram
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/konnektoren/"
+                                target="_blank"
+                            >
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a
+                                href="https://gumroad.konnektoren.help/"
+                                target="_blank"
+                            >
+                                <i class="fas fa-store"></i> Gumroad
+                            </a>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -538,14 +559,6 @@
 
         <!-- RevealJS Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
-        <!-- Font Awesome (for social icons - make sure to include this) -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-
         <script>
             Reveal.initialize({
                 controls: true,
@@ -553,6 +566,18 @@
                 center: true,
                 hash: true,
                 transition: "slide",
+                transitionSpeed: "default",
+                backgroundTransition: "fade",
+            });
+
+            // Update progress indicator
+            Reveal.on("slidechanged", (event) => {
+                const progress =
+                    (event.indexh / (Reveal.getTotalSlides() - 1)) * 100;
+                document.documentElement.style.setProperty(
+                    "--progress",
+                    `${progress}%`,
+                );
             });
         </script>
     </body>
