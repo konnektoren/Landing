@@ -53,6 +53,42 @@
                 padding: 4px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             }
+            .animated-pitchdeck-btn {
+                background: linear-gradient(
+                    90deg,
+                    var(--color-primary),
+                    var(--color-secondary)
+                );
+                color: var(--color-primary-content);
+                border: none;
+                border-radius: 0.75rem;
+                padding: 0.75rem 2rem;
+                font-size: 1.25rem;
+                font-weight: bold;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+                cursor: pointer;
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+                position: relative;
+                overflow: hidden;
+            }
+            .animated-pitchdeck-btn:hover {
+                transform: scale(1.05) translateY(-2px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            }
+            .animated-pitchdeck-btn .fa-slideshare {
+                margin-right: 0.5em;
+                animation: slideIcon 1s infinite alternate;
+            }
+            @keyframes slideIcon {
+                0% {
+                    transform: translateY(0);
+                }
+                100% {
+                    transform: translateY(-4px);
+                }
+            }
         </style>
     </head>
     <body class="bg-base-200 text-base-content">
@@ -118,6 +154,18 @@
                         educational resources that cater to the needs of
                         learners at all levels.
                     </p>
+                    <!-- Animated Pitchdeck Button -->
+                    <div class="mt-6 flex justify-center">
+                        <a
+                            href="/pitchdeck/"
+                            target="_blank"
+                            class="animated-pitchdeck-btn"
+                            title="View our Investor Pitchdeck"
+                        >
+                            <i class="fa-brands fa-slideshare"></i>
+                            View Pitchdeck
+                        </a>
+                    </div>
                 </div>
             </div>
 
